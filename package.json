@@ -1,0 +1,16 @@
+{
+  "name": "ya-brand-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass --style=compressed assets/scss/main.scss assets/css/main.css --watch",
+    "watch": "nodemon -e scss -x \"npm run scss\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^3.1.9",
+    "sass": "^1.84.0"
+  }
+}

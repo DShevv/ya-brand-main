@@ -1,0 +1,5 @@
+@function vw-1600($px) {
+  $sign: if($px < 0, -1, 1);
+  $abs-px: abs($px);
+  @return calc(min((($abs-px * 100) / 1920) * 1vw, $abs-px * 1px) * $sign);
+}

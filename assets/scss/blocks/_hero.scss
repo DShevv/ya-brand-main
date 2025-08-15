@@ -1,0 +1,145 @@
+@use "../fonts" as *;
+@use "../functions" as *;
+
+.hero {
+  position: relative;
+  z-index: 1;
+  height: 100svh;
+  padding-top: vw-1600(198);
+  padding-bottom: vw-1600(64);
+  max-width: vw-1600(1536);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (orientation: portrait) {
+    padding-top: 100px;
+    padding-bottom: 0;
+    max-width: calc(100% - 40px);
+    margin: 0 20px;
+    gap: 40px;
+  }
+
+  &__container {
+    @media (orientation: portrait) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+  }
+
+  &__title {
+    @include h2;
+    color: var(--3-txt);
+    display: flex;
+    flex-direction: column;
+
+    span {
+      @include h1;
+      color: var(--3-yellow);
+    }
+  }
+
+  &__text {
+    @include body-1;
+    color: var(--3-txt);
+    margin-top: vw-1600(20);
+    max-width: vw-1600(798);
+
+    @media (orientation: portrait) {
+      max-width: 100%;
+      margin-top: 12px;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    margin-top: vw-1600(42);
+
+    @media (orientation: portrait) {
+      margin-top: 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: vw-1600(48);
+
+    @media (orientation: portrait) {
+      display: none;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: vw-1600(14);
+      max-width: vw-1600(322);
+
+      &-icon {
+        width: vw-1600(78);
+        height: vw-1600(78);
+        background: var(--3-yellow);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(40px);
+        box-shadow:
+          inset 0 0 20px 0 rgba(247, 241, 231, 0.03),
+          inset 0 3px 5px 0 rgba(247, 241, 231, 0.3);
+        background: rgba(255, 248, 238, 0.01);
+        flex-shrink: 0;
+
+        img {
+          width: vw-1600(54);
+          height: vw-1600(54);
+        }
+      }
+
+      &-caption {
+        display: flex;
+        flex-direction: column;
+        gap: vw-1600(6);
+      }
+    }
+  }
+
+  &__item {
+    &-title {
+      @include h5;
+      color: var(--3-txt);
+    }
+
+    &-text {
+      @include body-3;
+      color: var(--3-txt);
+    }
+  }
+}
+
+.main-phone {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: auto;
+  max-width: vw-1600(666);
+  height: 87%;
+  max-height: vw-1600(818);
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+
+  @media (orientation: portrait) {
+    display: flex;
+    position: static;
+    flex: 1 1 100%;
+    width: 100%;
+    height: initial;
+    max-height: initial;
+    max-width: 100%;
+  }
+}

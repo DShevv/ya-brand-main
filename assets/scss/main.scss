@@ -1,0 +1,239 @@
+@use "fonts" as *;
+@use "functions" as *;
+@use "buttons";
+@use "blocks/hero";
+@use "blocks/conferences";
+@use "blocks/contacts";
+@use "blocks/feedback";
+
+:root {
+  --font-family: "Manrope", sans-serif;
+  --second-family: "Cygre Black", sans-serif;
+  --third-family: "Montserrat", sans-serif;
+
+  --3-txt: #fff8ee;
+  --3-txt-dark: #3c0002;
+  --3-bg-dark: #1a0d0e;
+  --3-yellow: #ffbc48;
+  --3-yellow-2: #f8a006;
+  --3-red: #ab0001;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--3-txt);
+  font-family: var(--second-family);
+  background-color: var(--3-bg-dark);
+  width: 100%;
+}
+
+.wrapper {
+  max-width: vw-1600(1296);
+  width: 100%;
+  margin: 0 auto;
+
+  @media (orientation: portrait) {
+    max-width: calc(100dvw - 40px);
+  }
+}
+
+.header {
+  position: fixed;
+  z-index: 2;
+  max-width: vw-1600(1536);
+  width: 100%;
+  top: vw-1600(20);
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (orientation: portrait) {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: initial;
+    margin: 0;
+    border-radius: 12px;
+    padding: 6px 12px;
+    z-index: 1000;
+
+    .burger {
+      width: 36px;
+      height: 36px;
+      background: var(--violet);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  &__logo {
+    display: flex;
+
+    &-img {
+      width: vw-1600(130);
+      height: vw-1600(78);
+
+      @media (orientation: portrait) {
+        width: 88px;
+        height: 53px;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: vw-1600(213);
+
+    @media (orientation: portrait) {
+      gap: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: vw-1600(80);
+    list-style: none;
+
+    @media (orientation: portrait) {
+      display: none;
+    }
+  }
+
+  &__link {
+    @include header;
+    color: var(--bg);
+    transition: all 0.2s ease;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--3-yellow);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: vw-1600(24);
+
+    @media (orientation: portrait) {
+      gap: 10px;
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  backdrop-filter: blur(20px);
+  background: rgba(26, 13, 14, 0.05);
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-end;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1100;
+
+    .mobile-menu__container {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &__container {
+    transition: all 0.3s ease;
+    position: relative;
+    width: 260px;
+    height: 100dvh;
+    background: var(--3-bg-dark);
+    padding: 91px 24px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateX(100%);
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  &__close {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-item {
+      @include h5;
+      width: fit-content;
+      text-decoration: none;
+      color: var(--txt);
+
+      &:hover {
+        color: var(--3-yellow);
+      }
+    }
+  }
+
+  &__info {
+    &-text {
+      @include body-3;
+      color: var(--3-txt);
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+@media (orientation: portrait) {
+  .desktop {
+    display: none !important;
+  }
+}
+
+@media (orientation: landscape) {
+  .mobile {
+    display: none !important;
+  }
+}

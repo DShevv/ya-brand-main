@@ -1,0 +1,159 @@
+@use "functions" as *;
+
+@font-face {
+  font-family: "Cygre Black";
+  src: url("/assets/fonts/Cygre-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@mixin h1 {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: vw-1600(120);
+  line-height: 130%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  @media (orientation: portrait) {
+    font-size: 44px;
+  }
+}
+
+@mixin h2 {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: vw-1600(71);
+  line-height: 130%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  @media (orientation: portrait) {
+    font-size: 26px;
+  }
+}
+
+@mixin h3 {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: vw-1600(68);
+  line-height: 130%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  @media (orientation: portrait) {
+    font-size: 24px;
+  }
+}
+
+@mixin h4 {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: vw-1600(40);
+  line-height: 130%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  @media (orientation: portrait) {
+    font-size: 20px;
+  }
+}
+
+@mixin h5 {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: vw-1600(18);
+  line-height: 130%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  @media (orientation: portrait) {
+    font-size: 16px;
+  }
+}
+
+@mixin body-1 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(28);
+  line-height: 140%;
+
+  @media (orientation: portrait) {
+    font-size: 17px;
+    line-height: 130%;
+  }
+}
+
+@mixin body-2 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(24);
+  line-height: 140%;
+
+  @media (orientation: portrait) {
+    font-size: 15px;
+    line-height: 130%;
+  }
+}
+
+@mixin body-3 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(18);
+  line-height: 130%;
+
+  @media (orientation: portrait) {
+    font-size: 14px;
+  }
+}
+
+@mixin body-4 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: vw-1600(16);
+  line-height: 130%;
+
+  @media (orientation: portrait) {
+    font-size: 12px;
+    line-height: 130%;
+  }
+}
+
+@mixin button {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: vw-1600(22);
+
+  @media (orientation: portrait) {
+    font-size: 18px;
+  }
+}
+
+@mixin button-secondary {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: vw-1600(19);
+
+  @media (orientation: portrait) {
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+@mixin header {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(19);
+}
+
+@mixin placeholder {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(18);
+  line-height: 150%;
+
+  @media (orientation: portrait) {
+    font-size: 16px;
+  }
+}
