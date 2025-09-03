@@ -122,19 +122,15 @@ async function getContacts() {
     });
 
     // Обновляем социальные сети
-    const instagramLink = document.querySelector(
-      '.contacts__info-social-link[href="instagram"]'
-    );
+    const instagramLink = document.querySelector('a[href="instagram"]');
     if (instagramLink && contact.instagram) {
-      instagramLink.href = `https://www.instagram.com/${contact.instagram}`;
+      instagramLink.href = `${contact.instagram}`;
       instagramLink.target = "_blank";
     }
 
-    const telegramLink = document.querySelector(
-      '.contacts__info-social-link[href="telegram"]'
-    );
+    const telegramLink = document.querySelector('a[href="telegram"]');
     if (telegramLink && contact.telegram) {
-      telegramLink.href = `https://t.me/${contact.telegram}`;
+      telegramLink.href = `${contact.telegram}`;
       telegramLink.target = "_blank";
     }
 

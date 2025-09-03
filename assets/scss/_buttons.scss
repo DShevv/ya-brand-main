@@ -2,22 +2,22 @@
 @use "functions" as *;
 
 .button {
-  @include button-secondary;
-
   border-radius: vw-1600(48);
   padding: vw-1600(17) vw-1600(32);
+  background: rgba(255, 248, 238, 0.01);
 
   backdrop-filter: blur(40px);
   box-shadow:
     inset 0 0 20px 0 rgba(247, 241, 231, 0.03),
     inset 0 3px 5px 0 rgba(247, 241, 231, 0.3);
-  background: rgba(255, 248, 238, 0.01);
   color: var(--3-txt);
   text-decoration: none;
   transition: all 0.3s ease;
   outline: none;
   cursor: pointer;
   border: none;
+
+  @include button-secondary;
 
   @media (orientation: portrait) {
     padding: 15px 32px;

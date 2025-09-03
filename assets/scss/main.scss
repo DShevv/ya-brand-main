@@ -5,6 +5,7 @@
 @use "blocks/conferences";
 @use "blocks/contacts";
 @use "blocks/feedback";
+@use "blocks/footer";
 
 :root {
   --font-family: "Manrope", sans-serif;
@@ -49,7 +50,7 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   z-index: 2;
   max-width: vw-1600(1536);
   width: 100%;
@@ -58,11 +59,12 @@ body {
   transform: translateX(-50%);
   background: transparent;
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
+  gap: vw-1600(500);
 
   @media (orientation: portrait) {
-    position: fixed;
+    position: absolute;
     top: 16px;
     left: 50%;
     transform: translateX(-50%);
@@ -102,7 +104,8 @@ body {
   &__menu {
     display: flex;
     align-items: center;
-    gap: vw-1600(213);
+    justify-content: space-between;
+    flex: 1;
 
     @media (orientation: portrait) {
       gap: 10px;
@@ -224,6 +227,12 @@ body {
   bottom: 0;
   right: 0;
   z-index: -1;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 @media (orientation: portrait) {
