@@ -37,6 +37,10 @@ body {
   font-family: var(--second-family);
   background-color: var(--3-bg-dark);
   width: 100%;
+
+  @media (orientation: portrait) {
+    background-color: #301819;
+  }
 }
 
 .wrapper {
@@ -233,6 +237,10 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @media (orientation: portrait) {
+    display: none;
   }
 }
 
