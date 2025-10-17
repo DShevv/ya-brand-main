@@ -1,0 +1,22 @@
+@use "../fonts" as *;
+@use "../functions" as *;
+
+.policies {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  height: fit-content;
+  padding-top: vw-1600(198);
+  padding-bottom: vw-1600(64);
+  max-width: vw-1600(1536);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: vw-1600(16);
+
+  &__link {
+    @include body-2;
+
+    color: var(--3-txt);
+  }
+}
